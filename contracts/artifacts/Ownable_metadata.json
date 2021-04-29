@@ -1,0 +1,142 @@
+{
+	"compiler": {
+		"version": "0.5.17+commit.d19bba13"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "isOwner",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "The Ownable contract has an owner address, and provides basic authorization control functions, this simplifies the implementation of \"user permissions\".",
+			"methods": {
+				"constructor": {
+					"details": "The Ownable constructor sets the original `owner` of the contract to the sender account."
+				},
+				"isOwner()": {
+					"return": "true if `msg.sender` is the owner of the contract."
+				},
+				"owner()": {
+					"return": "the address of the owner."
+				},
+				"renounceOwnership()": {
+					"details": "Allows the current owner to relinquish control of the contract."
+				},
+				"transferOwnership(address)": {
+					"details": "Allows the current owner to transfer control of the contract to a newOwner.",
+					"params": {
+						"newOwner": "The address to transfer ownership to."
+					}
+				}
+			},
+			"title": "Ownable"
+		},
+		"userdoc": {
+			"methods": {
+				"renounceOwnership()": {
+					"notice": "Renouncing to ownership will leave the contract without an owner. It will not be possible to call the functions with the `onlyOwner` modifier anymore."
+				}
+			}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Owner.sol": "Ownable"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Owner.sol": {
+			"keccak256": "0x6694abc0baa785b7f264982aa07d5fb7a13dab9e4e50e7710ecdbf1e72b4d022",
+			"urls": [
+				"bzz-raw://070fd800b9e6d326c14e755b1f4cd6b2a2ea4eaee3d6c448f24ebba77576b115",
+				"dweb:/ipfs/QmV1mqW7ejRvXjyCGAcDmofzuot77fWMRXjGsKNXSvGbzn"
+			]
+		}
+	},
+	"version": 1
+}

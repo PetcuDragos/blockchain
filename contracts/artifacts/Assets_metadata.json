@@ -1,0 +1,229 @@
+{
+	"compiler": {
+		"version": "0.8.4+commit.c7e474f2"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "game",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "asset_type",
+						"type": "string"
+					}
+				],
+				"name": "NewAsset",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "assetToOwner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "asset_list",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "game",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "asset_type",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "isOwner",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "showMessage",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"isOwner()": {
+					"returns": {
+						"_0": "true if `msg.sender` is the owner of the contract."
+					}
+				},
+				"owner()": {
+					"returns": {
+						"_0": "the address of the owner."
+					}
+				},
+				"renounceOwnership()": {
+					"details": "Allows the current owner to relinquish control of the contract."
+				},
+				"transferOwnership(address)": {
+					"details": "Allows the current owner to transfer control of the contract to a newOwner.",
+					"params": {
+						"newOwner": "The address to transfer ownership to."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"renounceOwnership()": {
+					"notice": "Renouncing to ownership will leave the contract without an owner. It will not be possible to call the functions with the `onlyOwner` modifier anymore."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Assets.sol": "Assets"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Assets.sol": {
+			"keccak256": "0xdb3eb49c9944186362b7f9315995f509dea54b467b985cf07e0037e51a073c57",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://f2d1593531920e6ec7bad617b4ba34589c3080c1fd83a00807f34351e1a4ff28",
+				"dweb:/ipfs/QmRCtWKqH22kKyge4XbzKYF5GSPNuvTpXbhBDaTqdr6aN7"
+			]
+		},
+		"contracts/Ownable.sol": {
+			"keccak256": "0xc2d39e250720b0ceaf6e4ec8eff346c7732506e3a7dcbd095d47e308a3fdab8e",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://00102cb8a5f2a7112205179f0726fd725c8aa74212f59cb784c17472f0e6959a",
+				"dweb:/ipfs/QmRRzogBrfGYXV2jJdDYbMPLoN6bkC4o7bJ3T3VE1jWsoj"
+			]
+		}
+	},
+	"version": 1
+}
