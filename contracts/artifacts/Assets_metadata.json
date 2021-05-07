@@ -25,6 +25,12 @@
 						"internalType": "string",
 						"name": "asset_type",
 						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "cost",
+						"type": "uint256"
 					}
 				],
 				"name": "NewAsset",
@@ -52,20 +58,29 @@
 			{
 				"inputs": [
 					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "game",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "asset_type",
+						"type": "string"
+					},
+					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "cost",
 						"type": "uint256"
 					}
 				],
-				"name": "assetToOwner",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
+				"name": "_createAsset",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -92,6 +107,115 @@
 						"internalType": "string",
 						"name": "asset_type",
 						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "cost",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "forSale",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "oldOwner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "changeOwnerForAsset",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "asset_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getCost",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "asset_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getForSale",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "ownerAdress",
+						"type": "address"
+					}
+				],
+				"name": "getOwnerAssetCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "getOwnerFromAssetId",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -131,16 +255,39 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "showMessage",
-				"outputs": [
+				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "asset_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "cost",
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "pure",
+				"name": "setCost",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "asset_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "forSale",
+						"type": "bool"
+					}
+				],
+				"name": "setForSale",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -209,11 +356,11 @@
 	},
 	"sources": {
 		"contracts/Assets.sol": {
-			"keccak256": "0xdb3eb49c9944186362b7f9315995f509dea54b467b985cf07e0037e51a073c57",
+			"keccak256": "0xc8c18a9fd05c82e2922869808dd6442eb81d968b48fd6e6bbf922ea86be3eb91",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://f2d1593531920e6ec7bad617b4ba34589c3080c1fd83a00807f34351e1a4ff28",
-				"dweb:/ipfs/QmRCtWKqH22kKyge4XbzKYF5GSPNuvTpXbhBDaTqdr6aN7"
+				"bzz-raw://48fed16c94496ab6b863a268c82c7e8626874c84646f9888bbecaee93e9e6e42",
+				"dweb:/ipfs/QmYd5Lvkzk8S34SoTMCGEgE32RuRifpZGLKvdvWdABnSAs"
 			]
 		},
 		"contracts/Ownable.sol": {
