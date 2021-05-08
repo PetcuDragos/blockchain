@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity >=0.8.0 <0.9.0;
+pragma solidity >=0.5.0 <0.9.0;
 
 /**
 * @title Ownable
@@ -7,7 +7,7 @@ pragma solidity >=0.8.0 <0.9.0;
 * functions, this simplifies the implementation of "user permissions".
 */
 contract Ownable {
-  address private _owner;
+  address payable private _owner;
 
   event OwnershipTransferred(
     address indexed previousOwner,
@@ -19,7 +19,7 @@ contract Ownable {
   * account.
   */
   constructor() {
-    _owner = msg.sender;
+    _owner = payable(msg.sender);
     emit OwnershipTransferred(address(0), _owner);
   }
 
@@ -53,7 +53,7 @@ contract Ownable {
   */
   function renounceOwnership() public onlyOwner {
     emit OwnershipTransferred(_owner, address(0));
-    _owner = address(0);
+    _owner = payable(0);
   }
 
   /**
@@ -71,6 +71,6 @@ contract Ownable {
   function _transferOwnership(address newOwner) internal {
     require(newOwner != address(0));
     emit OwnershipTransferred(_owner, newOwner);
-    _owner = newOwner;
+    _owner = payable(newOwner);
   }
 }

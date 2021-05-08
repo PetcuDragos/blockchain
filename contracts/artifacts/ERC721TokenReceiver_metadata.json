@@ -1,0 +1,97 @@
+{
+	"compiler": {
+		"version": "0.8.4+commit.c7e474f2"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_operator",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_from",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_data",
+						"type": "bytes"
+					}
+				],
+				"name": "onERC721Received",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"onERC721Received(address,address,uint256,bytes)": {
+					"details": "The ERC721 smart contract calls this function on the recipient after a `transfer`. This function MAY throw to revert and reject the transfer. Return of other than the magic value MUST result in the transaction being reverted.",
+					"params": {
+						"_data": "Additional data with no specified format",
+						"_from": "The address which previously owned the token",
+						"_operator": "The address which called `safeTransferFrom` function",
+						"_tokenId": "The NFT identifier which is being transferred"
+					},
+					"returns": {
+						"_0": "`bytes4(keccak256(\"onERC721Received(address,address,uint256,bytes)\"))` unless throwing"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"onERC721Received(address,address,uint256,bytes)": {
+					"notice": "Handle the receipt of an NFTThe contract address is always the message sender."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/erc721.sol": "ERC721TokenReceiver"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/erc721.sol": {
+			"keccak256": "0xa58c13a2f103c61385d708d8143f109bd0aae8f3f3fdca343517e8fb556ac2e4",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://fdeb125d24c72a220a540d34942b5d243e94c4f1ea072bd5be1127bceb6f903f",
+				"dweb:/ipfs/QmVMwk6njt3pU8bpWd6HcxCQNaoFxMgbwMpm1TCTPXvim6"
+			]
+		}
+	},
+	"version": 1
+}

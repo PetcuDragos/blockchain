@@ -58,96 +58,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "game",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "asset_type",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "cost",
-						"type": "uint256"
-					}
-				],
-				"name": "_createAsset",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "asset_list",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "game",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "asset_type",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "cost",
-						"type": "uint256"
-					},
-					{
-						"internalType": "bool",
-						"name": "forSale",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "id",
-						"type": "uint256"
-					},
-					{
-						"internalType": "address",
-						"name": "oldOwner",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "newOwner",
-						"type": "address"
-					}
-				],
-				"name": "changeOwnerForAsset",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "uint256",
 						"name": "asset_id",
 						"type": "uint256"
@@ -178,44 +88,6 @@
 						"internalType": "bool",
 						"name": "",
 						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "ownerAdress",
-						"type": "address"
-					}
-				],
-				"name": "getOwnerAssetCount",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "id",
-						"type": "uint256"
-					}
-				],
-				"name": "getOwnerFromAssetId",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -356,19 +228,19 @@
 	},
 	"sources": {
 		"contracts/Assets.sol": {
-			"keccak256": "0xc8c18a9fd05c82e2922869808dd6442eb81d968b48fd6e6bbf922ea86be3eb91",
+			"keccak256": "0x1dca162f74ed6d6020f3297e42879446d14b343c71dc087b6a01e631c598fe02",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://48fed16c94496ab6b863a268c82c7e8626874c84646f9888bbecaee93e9e6e42",
-				"dweb:/ipfs/QmYd5Lvkzk8S34SoTMCGEgE32RuRifpZGLKvdvWdABnSAs"
+				"bzz-raw://a830c3c3d06921c0cbab5201230e4f7f51ac98564c44da00f8fcdd2c821166a4",
+				"dweb:/ipfs/QmU5NPyoazNQRvXZ6P7qV7jrsJLpsU7DAmR8eGZcV6FqoP"
 			]
 		},
 		"contracts/Ownable.sol": {
-			"keccak256": "0xc2d39e250720b0ceaf6e4ec8eff346c7732506e3a7dcbd095d47e308a3fdab8e",
+			"keccak256": "0x624d2024551dee573c5329056597521a737652cf7fdae5303b87156dfb69c14a",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://00102cb8a5f2a7112205179f0726fd725c8aa74212f59cb784c17472f0e6959a",
-				"dweb:/ipfs/QmRRzogBrfGYXV2jJdDYbMPLoN6bkC4o7bJ3T3VE1jWsoj"
+				"bzz-raw://4806d85f9c9917ba53377896b769eb1a20803acaf0d152e8fb429826ed9d9389",
+				"dweb:/ipfs/QmcFh4Tz7i2TXJdVSqVBkkLTHgzc82cxxPSyMm5vBUd9yg"
 			]
 		}
 	},

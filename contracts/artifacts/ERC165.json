@@ -31,12 +31,15 @@
 	},
 	"data": {
 		"bytecode": {
+			"generatedSources": [],
 			"linkReferences": {},
 			"object": "",
 			"opcodes": "",
 			"sourceMap": ""
 		},
 		"deployedBytecode": {
+			"generatedSources": [],
+			"immutableReferences": {},
 			"linkReferences": {},
 			"object": "",
 			"opcodes": "",
@@ -49,9 +52,9 @@
 	},
 	"abi": [
 		{
-			"constant": true,
 			"inputs": [
 				{
+					"internalType": "bytes4",
 					"name": "interfaceID",
 					"type": "bytes4"
 				}
@@ -59,11 +62,11 @@
 			"name": "supportsInterface",
 			"outputs": [
 				{
+					"internalType": "bool",
 					"name": "",
 					"type": "bool"
 				}
 			],
-			"payable": false,
 			"stateMutability": "view",
 			"type": "function"
 		}
