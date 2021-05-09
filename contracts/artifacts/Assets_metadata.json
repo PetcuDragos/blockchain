@@ -9,37 +9,6 @@
 				"anonymous": false,
 				"inputs": [
 					{
-						"indexed": false,
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"indexed": false,
-						"internalType": "string",
-						"name": "game",
-						"type": "string"
-					},
-					{
-						"indexed": false,
-						"internalType": "string",
-						"name": "asset_type",
-						"type": "string"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "cost",
-						"type": "uint256"
-					}
-				],
-				"name": "NewAsset",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
 						"indexed": true,
 						"internalType": "address",
 						"name": "previousOwner",
@@ -63,7 +32,26 @@
 						"type": "uint256"
 					}
 				],
-				"name": "getCost",
+				"name": "_getAssetForSaleForAsset",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "asset_id",
+						"type": "uint256"
+					}
+				],
+				"name": "_getCostForAsset",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -80,17 +68,16 @@
 						"internalType": "uint256",
 						"name": "asset_id",
 						"type": "uint256"
-					}
-				],
-				"name": "getForSale",
-				"outputs": [
+					},
 					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
+						"internalType": "uint256",
+						"name": "cost",
+						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
+				"name": "_setCostForAsset",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -122,42 +109,6 @@
 			{
 				"inputs": [],
 				"name": "renounceOwnership",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "asset_id",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "cost",
-						"type": "uint256"
-					}
-				],
-				"name": "setCost",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "asset_id",
-						"type": "uint256"
-					},
-					{
-						"internalType": "bool",
-						"name": "forSale",
-						"type": "bool"
-					}
-				],
-				"name": "setForSale",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -228,11 +179,11 @@
 	},
 	"sources": {
 		"contracts/Assets.sol": {
-			"keccak256": "0x1dca162f74ed6d6020f3297e42879446d14b343c71dc087b6a01e631c598fe02",
+			"keccak256": "0x5a9a30ee7b79ee9afa561912cbdc7e550f8e887443487297277399f51faf827a",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://a830c3c3d06921c0cbab5201230e4f7f51ac98564c44da00f8fcdd2c821166a4",
-				"dweb:/ipfs/QmU5NPyoazNQRvXZ6P7qV7jrsJLpsU7DAmR8eGZcV6FqoP"
+				"bzz-raw://1d533ca3aa41a1c31eae2f8677fabf07f9bdaba218358afed61b8dc0b2698f55",
+				"dweb:/ipfs/QmUtFt3nP2coazfJvThqsUr9VUS9cq72pKAnA7xnyVXtVE"
 			]
 		},
 		"contracts/Ownable.sol": {
