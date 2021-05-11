@@ -117,29 +117,6 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_from",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "_to",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_tokenId",
-						"type": "uint256"
-					}
-				],
-				"name": "transferFrom",
-				"outputs": [],
-				"stateMutability": "payable",
-				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -174,14 +151,6 @@
 					"returns": {
 						"_0": "The address of the owner of the NFT"
 					}
-				},
-				"transferFrom(address,address,uint256)": {
-					"details": "Throws unless `msg.sender` is the current owner, an authorized  operator, or the approved address for this NFT. Throws if `_from` is  not the current owner. Throws if `_to` is the zero address. Throws if  `_tokenId` is not a valid NFT.",
-					"params": {
-						"_from": "The current owner of the NFT",
-						"_to": "The new owner",
-						"_tokenId": "The NFT to transfer"
-					}
 				}
 			},
 			"title": "ERC-721 Non-Fungible Token Standard",
@@ -195,9 +164,6 @@
 				},
 				"ownerOf(uint256)": {
 					"notice": "Find the owner of an NFT"
-				},
-				"transferFrom(address,address,uint256)": {
-					"notice": "Transfer ownership of an NFT -- THE CALLER IS RESPONSIBLE  TO CONFIRM THAT `_to` IS CAPABLE OF RECEIVING NFTS OR ELSE  THEY MAY BE PERMANENTLY LOST"
 				}
 			},
 			"version": 1
@@ -220,11 +186,11 @@
 	},
 	"sources": {
 		"contracts/erc721.sol": {
-			"keccak256": "0x656cc74c36543ce1af58cd0f6f54d72fbd2aaad216cf49dd8c5ff69a89b4df31",
+			"keccak256": "0x58dda0764082d08187f6b1f31ad8782d50340fbccb41cd68372ff9718340c521",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://609573578613ebed9f7be30ac1398d81a4100acc50de050cc6be9ce6d3bb4679",
-				"dweb:/ipfs/QmR5ynqmRPw24esVUmsDRheoo7GXbUxWHSYp77b3d38taw"
+				"bzz-raw://8476e82699dbc9a41a625fabb44a5d4442d71da9fc35538378150c39b252c5c8",
+				"dweb:/ipfs/QmVrcoFEPd96tAdFLsCwJR6ZnwaWT3KNyVDcCnaPwx7o36"
 			]
 		}
 	},

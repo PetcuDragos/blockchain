@@ -63,24 +63,6 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "asset_id",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "cost",
-						"type": "uint256"
-					}
-				],
-				"name": "_setCostForAsset",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
 				"inputs": [],
 				"name": "isOwner",
 				"outputs": [
@@ -179,11 +161,11 @@
 	},
 	"sources": {
 		"contracts/Assets.sol": {
-			"keccak256": "0x1d45851df0e28becfe45eb56dc23f6757a3155931c6b933e00c82bcd45b7b827",
+			"keccak256": "0x3af0b2a3e54ec84bc31a89824793cbd27aef013834c3e541bf1afc465a6e60a7",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://26bbcaabc7ff1bbef1af35e08fb1ce33ed91e5506527bd6ab3f9f1b19f039c29",
-				"dweb:/ipfs/QmXbMTbKJeKvyvzmgv5FfZLmjTGNyibghKag8g2KhbmkVc"
+				"bzz-raw://c53c6df799f863495d969fa6037fb75758ef2bfefb795faddcbbb5bdc92612c2",
+				"dweb:/ipfs/Qmbn4mn7qFqyC7CnPkV2GtjJVGMNsbF17JAC6w6LQpnwFU"
 			]
 		},
 		"contracts/Ownable.sol": {

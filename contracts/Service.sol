@@ -36,8 +36,22 @@ contract Service is ERC721,Assets {
     function ownerOf(uint256 _tokenId) override external view returns (address) {
         return _getOwnerFromAssetId(_tokenId);
     }
+    
+    function changeAddFee(uint newAddFee) public onlyOwner {
+        addFee = newAddFee;
+    }
 
-    function transferFrom(address _from, address _to, uint256 _tokenId) override external payable {
+    function changeTransferFee(uint newTransferFee) public onlyOwner{
+        transferFee = newTransferFee;
+    }
+    
+    function buyAsset(uint256 _tokenId) public payable{
+        address _to = msg.sender;
+        address _from = _getOwnerFromAssetId(_tokenId);
+        transferFrom(_from,_to,_tokenId);
+    }
+
+    function transferFrom(address _from, address _to, uint256 _tokenId) public payable {
         require (_getOwnerFromAssetId(_tokenId) == _from, "from address is not owner of tokenId");
         require (asset_list[_tokenId].forSale == true, "the token is not for sale");
         require (_from != _to, "cannot transfer from == to");
@@ -63,6 +77,7 @@ contract Service is ERC721,Assets {
     
     function setCostForAsset(uint256 _tokenId, uint256 value) public{
         require(_getOwnerFromAssetId(_tokenId) == msg.sender);
+        require(_getAssetForSaleForAsset(_tokenId) == false);
         _setCostForAsset(_tokenId, value);
         emit AssetCost(_tokenId,value);
     }

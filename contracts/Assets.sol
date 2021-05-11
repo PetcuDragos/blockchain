@@ -48,7 +48,7 @@ contract Assets is Ownable{
         return asset_list[asset_id].forSale;
     }
     
-    function _setCostForAsset(uint asset_id, uint cost) public {
+    function _setCostForAsset(uint asset_id, uint cost) internal {
         asset_list[asset_id].cost = cost;
     }
     

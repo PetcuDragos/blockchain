@@ -67,11 +67,11 @@
 	},
 	"sources": {
 		"contracts/erc721.sol": {
-			"keccak256": "0x656cc74c36543ce1af58cd0f6f54d72fbd2aaad216cf49dd8c5ff69a89b4df31",
+			"keccak256": "0x58dda0764082d08187f6b1f31ad8782d50340fbccb41cd68372ff9718340c521",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://609573578613ebed9f7be30ac1398d81a4100acc50de050cc6be9ce6d3bb4679",
-				"dweb:/ipfs/QmR5ynqmRPw24esVUmsDRheoo7GXbUxWHSYp77b3d38taw"
+				"bzz-raw://8476e82699dbc9a41a625fabb44a5d4442d71da9fc35538378150c39b252c5c8",
+				"dweb:/ipfs/QmVrcoFEPd96tAdFLsCwJR6ZnwaWT3KNyVDcCnaPwx7o36"
 			]
 		}
 	},
