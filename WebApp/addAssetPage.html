@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href = "style.css" rel="stylesheet">
+    <script src="jquery-3.6.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="utility.js"></script>
+    <script>
+        $(document).ready(function(){connect();});
+    </script>
+    <style>
+        body,html{
+            width:100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<br>Name of the asset: <input type="text" id="asset_name">
+<br>Name of the game: <input type="text" id="asset_game">
+<br>Type of the asset: <input type="text" id="asset_type">
+<br>Price(in wei): <input type="number" id="asset_price">
+<br><button onclick="create_asset()">Create Asset</button>
+
+</body>
+</html>

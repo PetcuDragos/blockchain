@@ -54,20 +54,25 @@ contract Service is ERC721,Assets {
         }
     }
     
-    function setAssetForSale(uint256 _tokenId, bool value) external{
+    
+    function setAssetForSale(uint256 _tokenId, bool value) public{
         require(_getOwnerFromAssetId(_tokenId) == msg.sender);
         _setForSaleForAsset(_tokenId, value);
         emit AssetForSale(_tokenId,value);
     }
     
-    function setCostForAsset(uint256 _tokenId, uint256 value) external{
+    function setCostForAsset(uint256 _tokenId, uint256 value) public{
         require(_getOwnerFromAssetId(_tokenId) == msg.sender);
         _setCostForAsset(_tokenId, value);
         emit AssetCost(_tokenId,value);
     }
     
-    function getTotalNumberOfAssets() external view returns (uint256){
+    function getTotalNumberOfAssets() public view returns (uint256){
         return asset_list.length;
+    }
+    
+    function getAssetFromId(uint tokenId) view  public returns (Asset memory){
+        return asset_list[tokenId];
     }
     
     

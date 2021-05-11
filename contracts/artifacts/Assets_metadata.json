@@ -179,11 +179,11 @@
 	},
 	"sources": {
 		"contracts/Assets.sol": {
-			"keccak256": "0x5a9a30ee7b79ee9afa561912cbdc7e550f8e887443487297277399f51faf827a",
+			"keccak256": "0x1d45851df0e28becfe45eb56dc23f6757a3155931c6b933e00c82bcd45b7b827",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://1d533ca3aa41a1c31eae2f8677fabf07f9bdaba218358afed61b8dc0b2698f55",
-				"dweb:/ipfs/QmUtFt3nP2coazfJvThqsUr9VUS9cq72pKAnA7xnyVXtVE"
+				"bzz-raw://26bbcaabc7ff1bbef1af35e08fb1ce33ed91e5506527bd6ab3f9f1b19f039c29",
+				"dweb:/ipfs/QmXbMTbKJeKvyvzmgv5FfZLmjTGNyibghKag8g2KhbmkVc"
 			]
 		},
 		"contracts/Ownable.sol": {

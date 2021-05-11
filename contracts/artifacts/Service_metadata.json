@@ -303,6 +303,52 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getAssetFromId",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "game",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "asset_type",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "cost",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "forSale",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct Assets.Asset",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "getTotalNumberOfAssets",
 				"outputs": [
@@ -543,11 +589,11 @@
 			]
 		},
 		"contracts/Service.sol": {
-			"keccak256": "0xacd12f15db1f960e02324c19c4a901929435d3dcf3d9739a39dbd834ae5bca2d",
+			"keccak256": "0x4cd0ae0c961a79e275fdcd09d2a6834e38a82cac42927e8180974868ed59d066",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://6fef71d92f29f2fd06140d63a8bc8c0d1df728fb98e3a959c51a968717122634",
-				"dweb:/ipfs/QmXFN9sQr1hEj4WLuWf28trvKanaqfVrRj7GUv3CDHA39S"
+				"bzz-raw://2c0b38977bdddb708f4a868d3601cd18fd8e08660e52438d527faf1b714cfe0b",
+				"dweb:/ipfs/QmVxYfFd6UACeGtwjTyQqe1bGyJrM7Z5ndoM6cC3khhgBi"
 			]
 		},
 		"contracts/erc721.sol": {

@@ -3,53 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>MarketChain</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="jquery-3.6.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="utility.js"></script>
 </head>
 <body>
 
+<div class="container">
+    <div id="header">
+        <p>Welcome to CryptoMarket !</p>
+    </div>
 
-    <div id="total_number_of_assets"></div>
+    <div id="menu">
+        <a target = "targetframe" id="menu_item_home" href="home.html">Home</a>
+        <a target = "targetframe" id="menu_item_all_assets" href="getAllAssetsPage.html">See all assets</a>
+        <a target = "targetframe" id="menu_item_add_asset" href="addAssetPage.html">Add asset</a>
+        <a target = "targetframe" id="menu_item_my_assets" href="getMyAssetsPage.html">See your assets</a>
 
-    <br>Create an asset
-    <br>Name of the asset: <input type="text" id="asset_name">
-    <br>Name of the game: <input type="text" id="asset_game">
-    <br>Type of the asset: <input type="text" id="asset_type">
-    <br>Price(in wei): <input type="number" id="asset_price">
-    <br><button onclick="create_asset()">Create Asset</button>
-
-
-
-
-
-<script src="jquery-3.6.0.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-<script>
-
-    var contract;
-    $(document).ready(function(){
-        $.getJSON("abi.json", function(abi) {
-            web3 = new Web3(web3.currentProvider);
-            var address = "0x0fF017F7bbCbd6a3a53af6F63e8cbAb7E22Cc621";
-            contract = new web3.eth.Contract(abi,address);
-            console.log(contract.methods);
-            contract.methods.getTotalNumberOfAssets().call().then(function(res){
-                $("#total_number_of_assets").html("There are " + res + " assets registered.");
-            });
-
-        });
+    </div>
 
 
-    });
-    function create_asset(){
-        var name = $("#asset_name").val();
-        var game = $("#asset_game").val();
-        var type = $("#asset_type").val();
-        var price = $("#asset_price").val();
-        web3.eth.requestAccounts().then(function(acc){
-            return contract.methods.createAsset(name, game, type, price).send({from: acc[0], gas: 3000000, value: 1}).then(function(res){console.log(res)}).catch(function(res){console.log(res)});
-        })
-    }
+    <div id="center">
+        <iframe src ="home.html" name="targetframe" allowTransparency="true" frameborder="0" ></iframe>
+    </div>
+</div>
 
-</script>
 
 </body>
 </html>
