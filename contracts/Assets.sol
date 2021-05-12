@@ -11,6 +11,7 @@ contract Assets is Ownable{
        string asset_type;
        uint cost;
        bool forSale;
+       bool forBid;
    }
    
    Asset[] internal asset_list;
@@ -54,6 +55,14 @@ contract Assets is Ownable{
     
     function _getCostForAsset(uint asset_id) public view returns(uint){
         return asset_list[asset_id].cost;
+    }
+    
+    function _setAssetForBid(uint asset_id, bool forBid) internal {
+        asset_list[asset_id].forBid = forBid;
+    }
+    
+    function _getAssetForBid(uint asset_id) public view returns(bool) {
+        return asset_list[asset_id].forBid;
     }
     
     

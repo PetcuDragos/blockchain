@@ -103,6 +103,25 @@
 				"inputs": [
 					{
 						"indexed": false,
+						"internalType": "uint256",
+						"name": "bid_id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newBest",
+						"type": "uint256"
+					}
+				],
+				"name": "HigherBidder",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
 						"internalType": "string",
 						"name": "name",
 						"type": "string"
@@ -127,6 +146,37 @@
 					}
 				],
 				"name": "NewAsset",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "token_id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "start_time",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "duration",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "starting_price",
+						"type": "uint256"
+					}
+				],
+				"name": "NewBidding",
 				"type": "event"
 			},
 			{
@@ -198,6 +248,25 @@
 				],
 				"name": "TransferFailed",
 				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "asset_id",
+						"type": "uint256"
+					}
+				],
+				"name": "_getAssetForBid",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			},
 			{
 				"inputs": [
@@ -327,7 +396,30 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "tokenId",
+						"name": "_tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "duration",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "starting_price",
+						"type": "uint256"
+					}
+				],
+				"name": "createBid",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
 						"type": "uint256"
 					}
 				],
@@ -358,6 +450,11 @@
 							{
 								"internalType": "bool",
 								"name": "forSale",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "forBid",
 								"type": "bool"
 							}
 						],
@@ -393,6 +490,24 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_bid_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "money",
+						"type": "uint256"
+					}
+				],
+				"name": "makeBid",
+				"outputs": [],
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
@@ -583,11 +698,19 @@
 	},
 	"sources": {
 		"contracts/Assets.sol": {
-			"keccak256": "0x3af0b2a3e54ec84bc31a89824793cbd27aef013834c3e541bf1afc465a6e60a7",
+			"keccak256": "0x37b544a67de3bc5d66587a4e0e4e3506c83a7b24570eca6ddbe4ca763fe9cafd",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://c53c6df799f863495d969fa6037fb75758ef2bfefb795faddcbbb5bdc92612c2",
-				"dweb:/ipfs/Qmbn4mn7qFqyC7CnPkV2GtjJVGMNsbF17JAC6w6LQpnwFU"
+				"bzz-raw://df0d2a991bd99f692aa3558c862154854836348d159f34426c10007dd635b696",
+				"dweb:/ipfs/QmZCQpdwafkJP4Ab5xD9ktpTXRH2pBdnFi7nJtCMqhew44"
+			]
+		},
+		"contracts/Bidding.sol": {
+			"keccak256": "0x453cfde649881bb5187671ae6b2ec7193b9a82bbeac7e670c266a5a92d509f73",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://2846e63eaed756af8470181b1ecf3ce953abc81514cba1cd02fd2a644ab6dbb9",
+				"dweb:/ipfs/Qmek2hcJfMuPtNFiQu8F8q44faA9deTNHMjkpusL2Tn5L1"
 			]
 		},
 		"contracts/Ownable.sol": {
@@ -599,11 +722,11 @@
 			]
 		},
 		"contracts/Service.sol": {
-			"keccak256": "0xb63715caf0f56af818f01474d06b7fa24a86fa46e961cd4e39e41fd2ddfa8dd8",
+			"keccak256": "0xcabb7c62e8e5b39ec19f6215edac8133e02df547d2a2709402fddb201912c691",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://366158d4aec68d41bb6ba93a2781e3f22a32318349fcce928fa6889826bdd1b9",
-				"dweb:/ipfs/QmW1Kn5xqQyrPwoGojsUvx6w2FkrTUbENNbfrrtnePSB1p"
+				"bzz-raw://8052ef817af43de651347c53e20e68d1ed4df86987c08118e7f662da1a9f5c23",
+				"dweb:/ipfs/QmYE2efdq1x3vobY5Gh1bkHZSzBz75Dr8qYvN4qvMASHN9"
 			]
 		},
 		"contracts/erc721.sol": {
