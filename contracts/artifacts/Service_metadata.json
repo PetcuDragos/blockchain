@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.4+commit.c7e474f2"
+		"version": "0.8.1+commit.df193b15"
 	},
 	"language": "Solidity",
 	"output": {
@@ -496,6 +496,25 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "isOwnerOfAsset",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "_bid_id",
 						"type": "uint256"
 					},
@@ -722,11 +741,11 @@
 			]
 		},
 		"contracts/Service.sol": {
-			"keccak256": "0xcabb7c62e8e5b39ec19f6215edac8133e02df547d2a2709402fddb201912c691",
+			"keccak256": "0x3bc2dc8d0aecf9c1173e343fc9bdaa4fe2e34d558ca60487e6a71f308e8c7ab9",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://8052ef817af43de651347c53e20e68d1ed4df86987c08118e7f662da1a9f5c23",
-				"dweb:/ipfs/QmYE2efdq1x3vobY5Gh1bkHZSzBz75Dr8qYvN4qvMASHN9"
+				"bzz-raw://405e0a1173d0d4e0da373a809a2f9ffaf3c584e40d011ac09b108acc5388d2a6",
+				"dweb:/ipfs/QmbRfQcwsGsrkx9DNLXXTH661YR74thCw3qD8EZBiRYmL4"
 			]
 		},
 		"contracts/erc721.sol": {

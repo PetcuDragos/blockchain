@@ -3,34 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>See all assets</title>
-    <link href = "style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <script src="jquery-3.6.0.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <script src="utility.js"></script>
 </head>
 <body>
-    <div id="assets_list">
-        <table id ="table_assets">
-            <tr><th>Name of the asset</th><th>Name of the game</th><th>Asset type</th><th>Price (in wei)</th></tr>
-        </table>
-    </div>
-    <script>
-        $(document).ready(function(){
-            connect().then(function(){
-                //console.log(number_of_assets);
-                for(var i = 0; i < number_of_assets; i ++) {
-                    //console.log("salut");
-                    contract.methods.getAssetFromId(i).call().then(function (res) {
-                        //console.log(res);
-                        var html = "<tr><td>" + res[0] + "</td><td>" + res[1] + "</td><td>" + res[2] + "</td><td>" + res[3] + "</td></tr>";
-                        $("#table_assets").append(html);
-                    });
-                }
-            });
+<div id="assets_list">
+    <table id="table_assets">
+        <tr>
+            <th>Name of the asset</th>
+            <th>Name of the game</th>
+            <th>Asset type</th>
+            <th>Price (in wei)</th>
+            <th>Option</th>
+        </tr>
+    </table>
+</div>
+<script>
+    $(document).ready(function () {
+        connect().then(function () {
+            console.log(number_of_assets);
+            for (let i = 0; i < number_of_assets; i++) {
+                //console.log("salut");
+                contract.methods.getAssetFromId(i).call().then(function (res) {
+                    //console.log(res);
+                    let html = "<tr><td>" + res[0] + "</td><td>" + res[1] + "</td><td>" + res[2] + "</td><td>" + res[3];
+                    html = html + "</td><td>" + "<button type='button' value = " + i + " onclick='buyAsset(this);'>Buy</button>";
+                    html = html + "</td></tr>";
+                    $("#table_assets").append(html);
 
+                });
+            }
         });
 
-    </script>
+    });
+
+</script>
 
 </body>
 </html>

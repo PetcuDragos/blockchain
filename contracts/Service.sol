@@ -101,8 +101,6 @@ contract Service is ERC721,Assets,Bidding {
         return asset_list[_tokenId];
     }
     
-    
-    
     function createBid(uint _tokenId, uint duration, uint starting_price) payable public{
         require(_tokenId >= 0 && _tokenId < getTotalNumberOfAssets() );
         require(_getOwnerFromAssetId(_tokenId) == msg.sender);
@@ -154,6 +152,13 @@ contract Service is ERC721,Assets,Bidding {
         require (_from != _to, "cannot transfer from == to");
         _changeOwnerForAsset(_tokenId, _from, _to);
         asset_list[_tokenId].forBid = false;
+    }
+    
+    function isOwnerOfAsset(uint _tokenId) view external returns(bool){
+        if(msg.sender == _getOwnerFromAssetId(_tokenId)){
+            return true;
+        }
+        return false;
     }
     
 }

@@ -2,17 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href = "style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <script src="jquery-3.6.0.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <script src="utility.js"></script>
 
 </head>
 <body>
-<div id="list_asset"></div>
+<div id="assets_list">
+    <table id="table_assets">
+        <tr>
+            <th>Name of the asset</th>
+            <th>Name of the game</th>
+            <th>Asset type</th>
+            <th>Price (in wei)</th>
+            <th>Sales</th>
+            <th>Bidding</th>
+        </tr>
+    </table>
+</div>
 <script>
-    $(document).ready(function(){
-        
+    var account;
+    $(document).ready(function () {
+        connect().then(function () {
+            web3.eth.requestAccounts().then(function (acc) {
+                account = acc[0];
+                for (let i = 0; i < number_of_assets; i++) {
+                    contract.methods.ownerOf(i).call().then(function (acc) {
+                        if (acc === account) {
+                            contract.methods.getAssetFromId(i).call().then(function (res) {
+                                console.log(res);
+                                var html = "<tr><td>" + res[0] + "</td><td>" + res[1] + "</td><td>" + res[2] + "</td><td>" + res[3];
+                                if(res[4] === false)
+                                    html = html + "</td><td>" + "<button type='button' onclick='addAssetForSale(this);'>Add for sale</button>";
+                                else
+                                    html = html + "</td><td>" + "<button type='button' style='background:darkred;' onclick='removeAssetFromSale(this);'>Remove from sale</button>";
+                                if(res[5] === false)
+                                    html = html + "</td><td>" + "<button type='button' onclick='addAssetForBid(this);'>Add for bid</button>";
+                                else
+                                    html = html + "</td><td>" + "<button type='button' style='background:darkred;' onclick='removeAssetFromBid(this);'>Remove from bid</button>";
+                                html = html + "</td></tr>";
+                                $("#table_assets").append(html);
+                            });
+                        }
+                    });
+                }
+            });
+        });
     });
 
 </script>
