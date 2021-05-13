@@ -1,9 +1,10 @@
 # Crypto-Market  -  A smart-contract
 We tried to make an application that will use the blockchain in order to learn more about solidity, web3, and smart contracts.
-Nenisca Maria
-Paun Tudor
-Petcu Dragos
-Ninicu Radu
+<br>Members:
+<br>Nenisca Maria
+<br>Paun Tudor
+<br>Petcu Dragos
+<br>Ninicu Radu
 
 # Overview
 
@@ -13,7 +14,7 @@ The cool part is that you can buy these assets, use them, and even resell them.
 Another cool feature that we implemented is a bidding process for these items.
 If you think you should let others decide the price of your asset you can let them bid for it and when the time is up the winner takes it all, at a fair price of course.
 
-#Pre-requisites
+# Pre-requisites
 We have used Remix IDE in order to make the contract and we have developed it with the power of Solidity, but also error and trial power.
 
 
